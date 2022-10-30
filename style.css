@@ -1,0 +1,30 @@
+h1{
+			color:Blue;
+		}
+
+		div.cmt{
+			font-size:15px; 
+			font-style:italic;
+			background:Blue!important;
+			color:red!important;
+			border-right: 2px solid red;
+		}
+
+		div.ent{
+			font-size:15px; 
+			font-style:italic;
+			background:Purple!important;
+			border-right: 2px solid red;
+			}
+		#fff{
+			width:400px;
+			height:300px;
+		}
+		
+		.arc{
+			color:yellow!important;
+		}
+
+		Table,td,th{
+			border:1px solid black;
+		}
