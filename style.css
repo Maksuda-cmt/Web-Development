@@ -1,3 +1,27 @@
-p{
-    font-family: 'Roboto', sans-serif;
+body{
+    background-image: url(./images/bg_main\ \(1\).gif);
+    background-size: cover;
+    margin: 0;
+}
+.container{
+    width: 1020px;
+    margin: 0 auto;
+}
+.topbar{
+    background: #9E5BBA;
+    width: 100%;
+    float: left;
+    padding: 5px 15px;
+    color: #ffffff;
+}
+.topbar .topbar-left{
+    float: left;
+}
+.topbar .topbar-right{
+    float: right;
+    font-size: 12px;
+}
+.topbar-right a{
+    color: #ffffff;
+    font-size: 12px;
 }
