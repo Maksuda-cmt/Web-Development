@@ -1,0 +1,143 @@
+body{
+    background-image: ;
+    background-size: cover;
+    margin: 0;
+}
+.container{
+    width: 1020px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+.topbar{
+    background: #9E5BBA;
+    width: 100%;
+    float: left;
+    padding: 5px 15px;
+    color: #ffffff;
+
+}
+.topbar .topbar-left{
+    float: : left;
+}
+.topbar .topbar-right{
+    float: right;
+    font-size: 12px;
+}
+.topbar-right a{
+    color: #ffffff;
+    font-size: 12px;
+}
+.header{
+    background-color: #ffffff;
+    width: 100%;
+    float: left;
+}
+.header-left{
+    float: left;
+}
+.header-left img{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 13px;
+}
+.header-right{
+    float: right;
+}
+.hr-top ul{
+    background-color: #7EC34F;
+    margin: 0;
+    padding: 0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+
+}
+.hr-top ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+}
+.hr-top ul li a{
+    color: #ffffff;
+    padding: 5px 5px;
+    font-size: 12px;
+    text-decoration: none;
+    border-left: 1px solid #ffffff;
+    display: block;
+    height: 24;
+    float: left;
+    line-height: 12px;
+}
+.hr-top ul li a span{
+    font-size: 24px;
+}
+.hr-bottom{
+    margin-top: 15px;
+    width: 100%;
+}
+.search input[type=text]{
+    width: 300px;
+    height: 18px;
+    padding: 3px;
+    border-radius: 4px;
+}
+.search{
+    float: left;
+}
+.search input[type=class=bottom]{
+    height: 28px;
+    padding: 3px;
+}
+.social-container{
+    float: right;
+    border-left: 1px solid rgb(22,20,20);
+    padding: 15px;
+}
+.a2i-logo{
+    padding-left: 15px;
+}
+.menu{
+    list-style-type: none;
+    display: inline-block;
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+
+}
+.me-top ul{
+    background-color: rgb(252, 237, 237);
+    margin: 0;
+    padding: 0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+
+}
+.me-top ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.me-top ul li a{
+    color: black;
+    padding: 5px 5px;
+    font-size: 15px;
+    text-decoration: none;
+    border-left: 1px solid #ffffff;
+    display: block;
+    height: 24;
+    float: left;
+    line-height: 12px;
+}
+.body-container{
+   width: 100%;
+   height: 50px;
+   margin: 0;
+   padding: 0;
+   border: 0; 
+   font-size: 100px;
+   vertical-align: baseline;
+}
