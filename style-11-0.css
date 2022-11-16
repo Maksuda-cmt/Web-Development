@@ -1,0 +1,12 @@
+.header{
+    background-image: url(./images/istockphoto-186802948-1024x1024.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    height: 500px;
+}
+.header img{
+    height: 500px;
+    
+}
