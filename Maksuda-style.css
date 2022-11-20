@@ -1,0 +1,70 @@
+body{
+    background: url(./assets/images/bg_main.gif) center;
+
+
+}
+.cont{
+    width: 996px;
+    margin: 0 auto;
+}
+/* topbar start */
+.topbar{
+    background-color: rgb(226, 76, 201);
+    height: 30px;
+    color: white;
+    font-size: 14px;
+    line-height: 30px;
+    border-bottom: 2px solid red;
+}
+.topbar_right p{
+    display: inline-block;
+    border-right: 1px solid white;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.topbar_right a{
+    text-decoration: none;
+    color: white;
+}
+/* topbar end */
+/* logo start */
+.logo{
+    height: 110px;
+}
+.logo_left{
+    line-height: 110px;
+}
+.logo_search{
+    padding-top: 55px;
+}
+form input{
+    width: 75%;
+}
+.logo_right{
+    padding-top: 35px;
+}
+.loglo1{
+    border-right: 1px solid white;
+    height: 45px;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+    top: 15%;
+}
+.loglo2 p{
+    font-size: 14px;
+    color: blueviolet;
+    position: relative;
+    top: 15%;
+}
+/* logo end */
+/* menu start */
+.navbar ul li a{
+    border-right: 1px solid rgb(190,185,127);
+
+}
+.navbar ul li a:hover{
+    background-color: rgb(27,199,127);
+    
+}
+/* menu end */
