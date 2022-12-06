@@ -1,94 +1,60 @@
-body{
-    background-image: url(./images/bg_main\ \(1\).gif);
-    background-size: cover;
+*{
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(17, 17, 17, 0.938);
 }
 .container{
-    width: 1020px;
-    margin: 0 auto;
-    background-color: #ffffff;
-}
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    text-align: center;
+    padding: 25px;
+    border-radius: 25px 25px 70px rgba(0, 0, 0, 0.5),
+                15px 15px 50px rgba(0, 0, 0, 0.5),
+                inset 10px 10px 10px rgba(0, 0, 0, 0.5),
+                inset 10px 10px 10px rgba(0, 0, 0, 0.5);
 
-.topbar{
-    background: #9E5BBA;
-    width: 100%;
-    float: left;
-    padding: 5px 15px;
-    color: #ffffff;
 }
-.topbar .topbar-left{
-    float: left;
+.output{
+    width: 250px;
+    height: 50px;
+    text-align: end;
+    padding: 5px;
+    border-radius: 10px;
 }
-.topbar .topbar-right{
-    float: right;
-    font-size: 12px;
+.all-btn{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
-.topbar-right a{
-    color: #ffffff;
-    font-size: 12px;
+.all-btn button{
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    border-radius: 50px;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px #000,inset -5px -5px 10px #000;
+    background-color: #111;
+    color: #fff;
 }
-.header{
-    background-color: #ffffff;
-    width: 100%;
-    float: left;
+.all-btn button:active{
+    box-shadow: 0 0 10px yellowgreen;
 }
-.header-left{
-    float: left;
+.all-btn .Clr{
+    grid-column: span 2;
+    width: 110px;
+    background-color: red;
 }
-.header-left img{
-    margin-left: 20px;
-    margin-top: 18px;
-    margin-bottom: 13px;
+.all-btn .plus{
+    grid-row: span 2;
+    height: 110px;
 }
-.header-right{
-    float: right;
-    width: 580px;
-}
-.hr-top ul{
-    background-color: #7EC34F;
-    margin: 0;
-    padding: 0;
-   margin-block-end: 0;
-   margin-block-start: 0;
-}
-.hr-top ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-}
-.hr-top ul li a{
-    color: #ffffff;
-    padding: 5px 5px;
-    font-size: 12px;
-    text-decoration: none;
-    border-left: 1px solid #ffffff;
-    display: block;
-    height: 24px;
-    float: left;
-    line-height: 12px;
-}
-.hr-top ul li a span{
-    font-size: 20px;
-}
-.hr-bottom{
-    margin-top: 15px;
-    width: 100%;
-}
-.search{
-    float: left;
-}
-.search input[type=text]{
-    width: 300px;
-    height: 18px;
-    padding: 3px;
-    border-radius: 4px;
-}
-.social-container{
-    float: right;
-    border-left: 1px solid #0e0c0c;
-    padding-left: 10px;
-}
-.a2i-logo{
-    padding-left: 15%;
+.all-btn .eql{
+    background-color: yellowgreen;
 }
