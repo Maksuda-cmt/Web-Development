@@ -7,24 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-   <?php
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
+$dbname = "test_db1";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Create database
-$sql = "CREATE DATABASE test_db";
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+
 if ($conn->query($sql) === TRUE) {
-  echo "Database created successfully";
+  echo "New record created successfully";
 } else {
-  echo "Error creating database: " . $conn->error;
+  echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
