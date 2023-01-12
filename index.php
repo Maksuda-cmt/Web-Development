@@ -1,134 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <?php wp_head();?>
 </head>
 <body>
+    <!--header part start-->
+    <header class="container-fluid slider">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <?php
+    $x=0;
+ while(have_posts()):the_post();
+ $x++;
+ ?>
 
-<div class="container mt-3">
-  <h3>Form IIST University Admission</h3>
-  <p>Try to submit the form.</p>
+    <div class="carousel-item <?= ($x==1)?'active':''?> ">
+        <?php the_post_thumbnail();?>
     
-  <?php
-// define variables and set to empty values
-$nameErr = $departmentErr = $rollErr = $gpaErr = "";
-$name = $department = $roll = $gpa = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed";
-    }
-  }
-  
-  if (empty($_POST["department"])) {
-    $departmentErr = "department is required";
-  
-  }else{
-        $department = $_POST["department"];
-    }
-    
-  if (empty($_POST["roll"])) {
-    $rollErr = "Rool is required";
-  } else {
-    if(!is_numeric($_POST["roll"])){
-        $rollErr = "Roll must be number";
-    }else{
-        $roll = $_POST["roll"];
-    }
-    
-  }
-
-  if (empty($_POST["gpa"])) {
-    $gpaErr = "Gpa is required";
-  } else {
-    if(!is_numeric($_POST["gpa"])){
-        $rollErr = "Gpa should be number";
-  }else{
-        $gpa = $_POST["gpa"];
-  
-}
-  }
-
-  // data insert in database
-if($nameErr == "" AND  $department = "" AND $roll == "" AND $gpa == ""){
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sa";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "INSERT INTO  sa (name, department, roll, gpa)
-VALUES ('name', 'department', 'roll', 'gpa')";
-
-if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-
-}
-}
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
-?>
-
-
-  <form action="/Day-28-project/index.php" class="was-validated" method="post">
-    <div class="mb-3 mt-3">
-      <label for="name" class="form-label">Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter yourname" name="name" required value="<?php echo $name;?>">
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field.</div>
     </div>
-     <div class="mb-3 mt-3">
-      <label for="department" class="form-label">Department:</label>
-       <select class="form-select" id="department" name="department">
-      <option value="CSE">CSE</option>
-      <option value="ETE">ETE</option>
-      <option value="EEE">EEE</option>
-      <option value="CIVIL">CIVIL</option>
-    </select>
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field.</div>
-    </div>
-     <div class="mb-3 mt-3">
-      <label for="roll" class="form-label">Roll:</label>
-      <input type="text" class="form-control" id="roll" placeholder="Enter your roll number" name="roll" required value="<?php echo $roll;?>">
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field.</div>
-    </div>
-     <div class="mb-3 mt-3">
-      <label for="gpa" class="form-label">GPA:</label>
-      <input type="text" class="form-control" id="gpa" placeholder="Enter gpa" name="gpa" required value="<?php echo $gpa;?>">
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field.</div>
-    </div>
-    
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<?php endwhile;?>
+   
+
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+    </header>
+    <!--header part end-->
+    <!--logo part start-->
+    <section class="container-fluid logo">
+        <div class="row">
+            <div class="col sm-6">
+                <?php the_custom_logo();?>
+            </div>
+            <div class="col sm-6 text-end">
+                <?php dynamic_sidebar('bdlogo');?>
+            </div>
+        </div>
+    </section>
+    <!--logo part end-->
+    <!--Menu part start-->
+    <section class="container-fluid main-menu">
+      <nav class="container navbar-expand">
+        <?php wp_nav_menu(array(
+          'theme_location'=>'primary_menu',
+          'menu_class'=>'navbar-nav menu-1'
+        ));?>
+      </nav>
 
+    </section>
+    <!--Menu part end-->
+    <!--Hero part start-->
+    <section class="container text-center hero pt-5 pb-5">
+      <div class="row">
+        <?php dynamic_sidebar('herotitle');?>
+       
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+        <div class="card h-100" style="width: 18rem;">
+         <?php dynamic_sidebar('herocard1');?>
+       </div>
+        </div>
+        <!-- -->
+        <div class="col-sm-4">
+        <div class="card h-100" style="width: 18rem;">
+         <?php dynamic_sidebar('herocard2');?>
+       </div>
+      </div>
+        <div class="col-sm-4">
+        <div class="card h-100" style="width: 18rem;">
+         <?php dynamic_sidebar('herocard3');?>
+       </div>
+     </div>
+  </div>
+
+    </section>
+    <!--Hero part end-->
+
+<?php wp_footer();?>
 </body>
 </html>
