@@ -4,28 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <?php wp_head();?>
 </head>
 <body>
-    <!--header part start-->
+    <!-- header part start -->
     <header class="container-fluid slider">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <?php
-    $x=0;
- while(have_posts()):the_post();
- $x++;
- ?>
+
+  <?php
+  $x=0;
+  while(have_posts()):the_post();
+  $x++;
+  ?>
 
     <div class="carousel-item <?= ($x==1)?'active':''?> ">
-        <?php the_post_thumbnail();?>
-    
-    </div>
-<?php endwhile;?>
-   
+    <?php the_post_thumbnail();?>
 
-
+</div>
+      <?php endwhile;?>
+      
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,8 +35,8 @@
   </button>
 </div>
     </header>
-    <!--header part end-->
-    <!--logo part start-->
+    <!-- header part end -->
+    <!-- logo part start -->
     <section class="container-fluid logo">
         <div class="row">
             <div class="col sm-6">
@@ -49,46 +47,17 @@
             </div>
         </div>
     </section>
-    <!--logo part end-->
-    <!--Menu part start-->
+    <!-- logo part end -->
+    <!-- Menu part start -->
     <section class="container-fluid main-menu">
-      <nav class="container navbar-expand">
-        <?php wp_nav_menu(array(
-          'theme_location'=>'primary_menu',
-          'menu_class'=>'navbar-nav menu-1'
-        ));?>
-      </nav>
-
+        <nav class="container navbar-expand">
+          <?php wp_nav_menu(array(
+            'theme_location'=>'primary_menu',
+            'menu_class'=>'navbar_nav menu-1'
+          ));?>
+          </nav>
     </section>
-    <!--Menu part end-->
-    <!--Hero part start-->
-    <section class="container text-center hero pt-5 pb-5">
-      <div class="row">
-        <?php dynamic_sidebar('herotitle');?>
-       
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-        <div class="card h-100" style="width: 18rem;">
-         <?php dynamic_sidebar('herocard1');?>
-       </div>
-        </div>
-        <!-- -->
-        <div class="col-sm-4">
-        <div class="card h-100" style="width: 18rem;">
-         <?php dynamic_sidebar('herocard2');?>
-       </div>
-      </div>
-        <div class="col-sm-4">
-        <div class="card h-100" style="width: 18rem;">
-         <?php dynamic_sidebar('herocard3');?>
-       </div>
-     </div>
-  </div>
-
-    </section>
-    <!--Hero part end-->
-
-<?php wp_footer();?>
+    <!-- Menu part end -->
+    <?php wp_footer();?>
 </body>
 </html>
